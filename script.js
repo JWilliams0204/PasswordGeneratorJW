@@ -1,78 +1,22 @@
-// Assignment Code
-var generateBtn = document.querySelector("#generate");
+// javascript function to create the action//
+function writePassword() {  
 
-// Write password to the #password input
-function writePassword() {
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
+var characterEl = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%&?" ;
 
-  passwordText.value = password;
+var Passwordlength = 8;
+var password = "";
 
-}
-var capitalLetters= ["A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z"];
-var lowercaseLetters= ["a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z"];
-var numbers=["0,1,2,3,4,5,6,7,8,9"];
-var symbols=["!,@,#,$,%,&,?"];
-var Passwordlength = 8
-var password = ""
+// for loop that executes the javascript code //
+  for(var i=0; i<Passwordlength; i++){
 
-var capitalEl= document.getElementById("capitalLetters");
-var lowercaseEl= document.getElementById("lowercaseLetters");
-var numberEl= document.getElementById("numbers");
-var symbolEl= document.getElementById("symbols");
-var generateEl= document.getElementById("generate");
+var  randomChars = Math.floor(Math.random() * characterEl.length);
+  password += characterEl.substring(randomChars,randomChars+1);
+
+  } 
+  document.getElementById("password").value = password;
+} 
+
+
 // Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
 
-function pwd(length.capitalLetters){
-  var password = "";
-
-  for(var i= 0; i<Passwordlength; i++){
-
-    password += capitalLetters.capitalEl(Math.floor(math.random()*25);
-  }
-  return password;
-}
-
-
-function pwd(length.lowercaseLetters){
-var password = "";
-
-for(var i= 0; i<Passwordlength; i++){
-
-  password += lowercaseLetters.lowercaseEl(Math.floor(math.random()*25);
-}
-return password;
-
-
-}
-
-
-function pwd(length.numbers){
-var password = "";
-
-for(var i= 0; i<Passwordlength; i++){
-
-  password += numbers.numberEl(Math.floor(math.random()*10);
-}
-return password;
-
-}
-
-
-function pwd(length.symbols){
-
-
-  for(var i= 0; i<Passwordlength; i++){
-
-    password += symbols.symbolEl(Math.floor(math.random()*7);
-  }
-  return password;
-
-}
-Submit.addEventListener("click", function(){
-
-  var capitalEl= capitalLetters;
-
-}
-
+document.getElementById("generate").addEventListener("click", writePassword);
